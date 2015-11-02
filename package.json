@@ -1,0 +1,28 @@
+{
+  "name": "irc-flowdock-echo",
+  "version": "1.0.0",
+  "description": "A bot to sync an IRC channel with a Flowdock flow",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grahamb/irc-flowdock-echo.git"
+  },
+  "keywords": [
+    "irc",
+    "flowdock",
+    "chat"
+  ],
+  "author": "Graham Ballantyne <hello@grahamballantyne.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grahamb/irc-flowdock-echo/issues"
+  },
+  "homepage": "https://github.com/grahamb/irc-flowdock-echo#readme",
+  "dependencies": {
+    "flowdock": "^0.9.0",
+    "irc": "^0.4.0"
+  }
+}
