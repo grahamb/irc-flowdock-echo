@@ -1,0 +1,23 @@
+module.exports = {
+  noNickPrefix: 'FLOWDOCK:::',
+  flowdock: {
+    token: 'TOKEN',
+    flow: 'FLOW-UNIQUE-ID',
+    botUserId: 'BOT-USER-ID',
+    nick: 'botNickName'
+  },
+  irc: {
+    server: 'irc.freenode.net',
+    nick: 'ircNickName',
+    clientOpts: {
+      channels: [],
+      port: 6697,
+      debug: false,
+      showErrors: true,
+      secure: true,
+      autoConnect: false,
+      autoRejoin: true,
+      retryCount: 3
+    }
+  }
+};
