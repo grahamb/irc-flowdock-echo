@@ -11,9 +11,10 @@
     "no-mixed-requires": [0],
     "no-underscore-dangle": [0],
     "camelcase": [0],
-    "no-unused-vars": [1],
+    "no-unused-vars": [1, {"vars": "local", "args": "none"}],
     "handle-callback-err": [0],
-    "semi": [2, "always"],
-    "indent": [2, 2]
+    "semi": [1, "always"],
+    "indent": [2, 2],
+    "no-undef": [2]
   }
 }
