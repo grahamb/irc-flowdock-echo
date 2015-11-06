@@ -1,4 +1,26 @@
 'use strict';
+
+const requiredEnvVars = ['FLOWDOCK_TOKEN',
+                         'FLOWDOCK_FLOW',
+                         'FLOWDOCK_BOT_USER_ID',
+                         'FLOWDOCK_NICK',
+                         'FLOWDOCK_NO_NICK_PREFIX',
+                         'IRC_SERVER',
+                         'IRC_NICK',
+                         'IRC_CHANNEL'
+];
+
+let missingEnvVars = requiredEnvVars.map((v) => {
+  return process.env[v] ? null : v;
+}).filter((val) => !!val);
+
+if (missingEnvVars.length > 0) {
+  console.log(`The following required environment variables are missing.
+${missingEnvVars.join(', ')}
+Please refer to the Readme for more information.`);
+  process.exit(1);
+}
+
 const mapping = require('./lib/mapping');
 const flowdockCommands = require('./lib/flowdockCommands');
 const irc = require('irc');
