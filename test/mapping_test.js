@@ -2,7 +2,6 @@
 'use strict';
 const expect = require('chai').expect;
 const fs = require('fs');
-const config = require('../config');
 let mapping;
 
 
@@ -78,19 +77,19 @@ describe('Mapping', () => {
 
     describe('replaces noNickPrefix', () => {
       it('when it is prefixed with an @ character', () => {
-        const message = `@${config.noNickPrefix}NoMappingUser are you there?`;
+        const message = `@${process.env['FLOWDOCK_NO_NICK_PREFIX']}NoMappingUser are you there?`;
         const expectation = '@NoMappingUser are you there?';
         expect(mapping.mapIrcNick(message)).to.eql(expectation);
       });
 
       it('when on its own', () => {
-        const message = `${config.noNickPrefix}NoMappingUser are you there?`;
+        const message = `${process.env['FLOWDOCK_NO_NICK_PREFIX']}NoMappingUser are you there?`;
         const expectation = '@NoMappingUser are you there?';
         expect(mapping.mapIrcNick(message)).to.eql(expectation);
       });
 
       it('when it is followed by a : character', () => {
-        const message = `${config.noNickPrefix}NoMappingUser: are you there?`;
+        const message = `${process.env['FLOWDOCK_NO_NICK_PREFIX']}NoMappingUser: are you there?`;
         const expectation = '@NoMappingUser: are you there?';
         expect(mapping.mapIrcNick(message)).to.eql(expectation);
       });

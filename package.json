@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha test",
+    "test": "FLOWDOCK_NO_NICK_PREFIX='FLOWDOCK:::' ./node_modules/.bin/mocha test",
     "test:watch": "npm run test -- -w"
   },
   "repository": {
