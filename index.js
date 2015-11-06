@@ -18,7 +18,6 @@ const ircClient = new irc.Client(process.env['IRC_SERVER'], process.env['IRC_NIC
 });
 
 ircClient.addListener('message', (from, to, message) => {
-  console.log({from, to, message});
   message = mapping.mapIrcNick(message);
   if (from !== process.env['IRC_NICK']) {
     flowdockSession.message(process.env['FLOWDOCK_FLOW'], `(${from}) ${message}`);
