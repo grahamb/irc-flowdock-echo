@@ -8,3 +8,4 @@ lib-cov
 coverage
 node_modules
 .npm
+config.js
