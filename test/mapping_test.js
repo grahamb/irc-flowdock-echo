@@ -93,6 +93,17 @@ describe('Mapping', () => {
         const expectation = '@NoMappingUser: are you there?';
         expect(mapping.mapIrcNick(message)).to.eql(expectation);
       });
+
+      it('when the userMap is empty', () => {
+        const oldUserMap = mapping.getMap();
+        mapping.setMap({});
+        const message = `${process.env['FLOWDOCK_NO_NICK_PREFIX']}NoMappingUser: are you there?`;
+        const expectation = '@NoMappingUser: are you there?';
+        const result = mapping.mapIrcNick(message);
+        mapping.setMap(oldUserMap);
+        expect(result).to.eql(expectation);
+      });
+
     });
   });
 
